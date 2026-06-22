@@ -49,4 +49,4 @@ Ao desenvolver o painel, os dados revelaram padrões muito interessantes sobre o
 - `Dashboard_Academia.pbip`: Arquivo do projeto Power BI salvo em formato *Project* para visualização da estrutura.
 
 ---
-Feito com 💡 e análise de dados por **[Seu Nome/Seu LinkedIn]**.
+Feito com 💡 e análise de dados por **[Raphael / www.linkedin.com/in/raphael-teves-maia-c]**.
