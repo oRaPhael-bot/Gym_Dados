@@ -3,7 +3,8 @@ Projeto de Dados sobre uma base de dados de uma academia.
 
 # 🏋️‍♂️ Dashboard de Análise de Desempenho e Saúde (Gym Members Tracking)
 
-![Capa do Projeto](link_para_uma_imagem_do_seu_dashboard_aqui.png)
+![Capa do Projeto](<img width="963" height="506" alt="image" src="https://github.com/user-attachments/assets/72312d16-e429-4b25-a49f-8e0773335199" />
+)
 
 ## 📌 Contexto do Projeto
 Este projeto de **Power BI** foi desenvolvido para analisar o comportamento, o esforço físico e o perfil de saúde dos membros de uma academia. 
