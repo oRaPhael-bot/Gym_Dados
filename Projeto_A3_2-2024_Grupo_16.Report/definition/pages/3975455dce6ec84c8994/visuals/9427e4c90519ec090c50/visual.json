@@ -1,0 +1,103 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "9427e4c90519ec090c50",
+  "position": {
+    "x": 9.9212598425196852,
+    "y": 0,
+    "z": 0,
+    "height": 711.496062992126,
+    "width": 515.90551181102364,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "areaChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "gym_members_exercise_tracking"
+                    }
+                  },
+                  "Property": "Age_Group"
+                }
+              },
+              "queryRef": "gym_members_exercise_tracking.Age_Group",
+              "nativeQueryRef": "Age_Group",
+              "active": true
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "gym_members_exercise_tracking"
+                    }
+                  },
+                  "Property": "Workout_Type"
+                }
+              },
+              "queryRef": "gym_members_exercise_tracking.Workout_Type",
+              "nativeQueryRef": "Workout_Type"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "gym_members_exercise_tracking"
+                        }
+                      },
+                      "Property": "Calories_Burned_Adjusted"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "Sum(gym_members_exercise_tracking.Calories_Burned_Adjusted)",
+              "nativeQueryRef": "Contagem de Calories_Burned_Adjusted"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "gym_members_exercise_tracking"
+                      }
+                    },
+                    "Property": "Calories_Burned_Adjusted"
+                  }
+                },
+                "Function": 5
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

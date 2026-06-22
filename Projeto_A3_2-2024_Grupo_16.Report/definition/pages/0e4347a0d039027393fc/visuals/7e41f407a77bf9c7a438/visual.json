@@ -1,0 +1,37 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "7e41f407a77bf9c7a438",
+  "position": {
+    "x": 0,
+    "y": 0,
+    "z": 3000,
+    "height": 160.54237288135593,
+    "width": 295.05084745762713,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Nesta distribuição percebemos que as pessoas mais velhas vão mais vezes a academia. Podemos concluir, com isso, que as pessoas mais velhas tem mais consciência sobre a saúde física.",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "14pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

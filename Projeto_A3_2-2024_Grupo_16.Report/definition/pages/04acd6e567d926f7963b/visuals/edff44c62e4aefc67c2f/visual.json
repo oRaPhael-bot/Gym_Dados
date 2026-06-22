@@ -1,0 +1,90 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "edff44c62e4aefc67c2f",
+  "position": {
+    "x": 574.01574803149606,
+    "y": 300.4724409448819,
+    "z": 1000,
+    "height": 419.5275590551181,
+    "width": 705.82677165354323,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "pieChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "gym_members_exercise_tracking"
+                    }
+                  },
+                  "Property": "Workout_Frequency (days/week)"
+                }
+              },
+              "queryRef": "gym_members_exercise_tracking.Workout_Frequency (days/week)",
+              "nativeQueryRef": "Workout_Frequency (days/week)",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "gym_members_exercise_tracking"
+                    }
+                  },
+                  "Property": "Corrected_Height3"
+                }
+              },
+              "queryRef": "gym_members_exercise_tracking.Corrected_Height3",
+              "nativeQueryRef": "Contagem de Corrected_Height3",
+              "active": false
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "gym_members_exercise_tracking"
+                    }
+                  },
+                  "Property": "Total Alunos"
+                }
+              },
+              "queryRef": "gym_members_exercise_tracking.Total Alunos",
+              "nativeQueryRef": "Total Alunos"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "gym_members_exercise_tracking"
+                  }
+                },
+                "Property": "Total Alunos"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

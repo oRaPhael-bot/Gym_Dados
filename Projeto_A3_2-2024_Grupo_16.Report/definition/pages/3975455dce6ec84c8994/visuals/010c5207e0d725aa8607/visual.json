@@ -1,0 +1,85 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "010c5207e0d725aa8607",
+  "position": {
+    "x": 525.82677165354323,
+    "y": 0,
+    "z": 2000,
+    "height": 253.70078740157479,
+    "width": 754.01574803149606,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "pieChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "gym_members_exercise_tracking"
+                    }
+                  },
+                  "Property": "Workout_Type"
+                }
+              },
+              "queryRef": "gym_members_exercise_tracking.Workout_Type",
+              "nativeQueryRef": "Workout_Type",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "gym_members_exercise_tracking"
+                        }
+                      },
+                      "Property": "Fat_Percentage"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Avg(gym_members_exercise_tracking.Fat_Percentage)",
+              "nativeQueryRef": "Média de Fat_Percentage"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "gym_members_exercise_tracking"
+                      }
+                    },
+                    "Property": "Fat_Percentage"
+                  }
+                },
+                "Function": 1
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

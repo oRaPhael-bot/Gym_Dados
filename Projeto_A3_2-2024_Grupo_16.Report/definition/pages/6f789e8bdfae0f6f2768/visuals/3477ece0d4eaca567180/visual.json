@@ -1,0 +1,75 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "3477ece0d4eaca567180",
+  "position": {
+    "x": 0,
+    "y": 162.4390243902439,
+    "z": 5000,
+    "height": 237.95121951219514,
+    "width": 468,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "pieChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "gym_members_exercise_tracking"
+                    }
+                  },
+                  "Property": "Gender"
+                }
+              },
+              "queryRef": "gym_members_exercise_tracking.Gender",
+              "nativeQueryRef": "Gender",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "gym_members_exercise_tracking"
+                    }
+                  },
+                  "Property": "Total Alunos"
+                }
+              },
+              "queryRef": "gym_members_exercise_tracking.Total Alunos",
+              "nativeQueryRef": "Total Alunos"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "gym_members_exercise_tracking"
+                  }
+                },
+                "Property": "Total Alunos"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

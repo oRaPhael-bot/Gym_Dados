@@ -1,0 +1,99 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "e2272512f21e9552da04",
+  "position": {
+    "x": 574.01574803149606,
+    "y": 0,
+    "z": 4000,
+    "height": 300.4724409448819,
+    "width": 705.82677165354323,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "columnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "gym_members_exercise_tracking"
+                    }
+                  },
+                  "Property": "Workout_Frequency (days/week)"
+                }
+              },
+              "queryRef": "gym_members_exercise_tracking.Workout_Frequency (days/week)",
+              "nativeQueryRef": "Workout_Frequency (days/week)",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "gym_members_exercise_tracking"
+                        }
+                      },
+                      "Property": "Corrected_Height3"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(gym_members_exercise_tracking.Corrected_Height3)",
+              "nativeQueryRef": "Soma de Corrected_Height3"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "gym_members_exercise_tracking"
+                    }
+                  },
+                  "Property": "Peso Médio"
+                }
+              },
+              "queryRef": "gym_members_exercise_tracking.Peso Médio",
+              "nativeQueryRef": "Peso Médio"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "gym_members_exercise_tracking"
+                      }
+                    },
+                    "Property": "Corrected_Height3"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "88881b4bfda94ec28378",
+  "position": {
+    "x": 597.07317073170736,
+    "y": 129.07317073170734,
+    "z": 2000,
+    "height": 590.92682926829275,
+    "width": 683.1219512195122,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "areaChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "gym_members_exercise_tracking"
+                    }
+                  },
+                  "Property": "Workout_Type"
+                }
+              },
+              "queryRef": "gym_members_exercise_tracking.Workout_Type",
+              "nativeQueryRef": "Workout_Type",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "gym_members_exercise_tracking"
+                        }
+                      },
+                      "Property": "Water_Intake (liters)"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Avg(gym_members_exercise_tracking.Water_Intake (liters))",
+              "nativeQueryRef": "Média de Water_Intake (liters)"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "gym_members_exercise_tracking"
+                      }
+                    },
+                    "Property": "Water_Intake (liters)"
+                  }
+                },
+                "Function": 1
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "c989e5a26d13933fb6a5",
+  "position": {
+    "x": 748.97560975609758,
+    "y": 0,
+    "z": 3000,
+    "height": 163.3170731707317,
+    "width": 187.90243902439025,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "gym_members_exercise_tracking"
+                    }
+                  },
+                  "Property": "Peso Médio"
+                }
+              },
+              "queryRef": "gym_members_exercise_tracking.Peso Médio",
+              "nativeQueryRef": "Peso Médio"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "gym_members_exercise_tracking"
+                  }
+                },
+                "Property": "Peso Médio"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

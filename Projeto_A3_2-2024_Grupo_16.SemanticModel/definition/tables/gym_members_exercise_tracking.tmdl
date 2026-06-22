@@ -1,0 +1,343 @@
+table gym_members_exercise_tracking
+	lineageTag: 3c6e4ddf-7557-4a51-89b5-8656292380ba
+
+	measure 'BMI Médio' = AVERAGE(gym_members_exercise_tracking[BMIValor])
+		lineageTag: ae65e259-2895-4a95-8d23-817ec98b2eb6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Alunos' = COUNTROWS(gym_members_exercise_tracking)
+		formatString: 0
+		lineageTag: bd6483f3-9fe0-47df-b070-01ebaa1126d5
+
+	measure 'Altura Média' = AVERAGE(gym_members_exercise_tracking[Corrected_Height3])
+		formatString: 0.00
+		lineageTag: 678f5744-1fee-4c20-8021-9b7f89e0a021
+
+	measure 'Idade média' = AVERAGE(gym_members_exercise_tracking[Age])
+		formatString: 0
+		lineageTag: a32d2fed-9eac-4a15-b14f-4a80e7268f2d
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Peso Médio' = AVERAGE(gym_members_exercise_tracking[WeightValor])
+		formatString: 0
+		lineageTag: f66894a8-f708-4369-9cc4-403d02795faf
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Ranking por Altura' = RANKX(ALLSELECTED(gym_members_exercise_tracking[Corrected_Height3]),[Total Alunos])
+		formatString: 0
+		lineageTag: 49c5c5ba-fb6d-4338-8ab7-b7e15ec784c5
+
+	measure 'Total de Alunos ALL' = CALCULATE([Total Alunos], ALL(gym_members_exercise_tracking))
+		formatString: 0
+		lineageTag: 074a05b9-b2d3-4935-bdea-e635e3828c15
+
+	column Age
+		dataType: int64
+		formatString: 0
+		lineageTag: 75b739c3-758c-4e45-8d9a-f305a112cf49
+		summarizeBy: sum
+		sourceColumn: Age
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		lineageTag: 1208998d-30c1-49fd-9e75-f4259aac1750
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Weight (kg)'
+		dataType: double
+		lineageTag: fc5050b9-375d-40bd-a0e4-97d8fc5f0572
+		summarizeBy: sum
+		sourceColumn: Weight (kg)
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Height_m
+		dataType: double
+		lineageTag: 93e4acb7-a822-43df-b5c8-2102e191134b
+		summarizeBy: sum
+		sourceColumn: Height_m
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Max_BPM
+		dataType: string
+		lineageTag: e0d079f8-5c66-4dd6-9d9b-ce7cf7282259
+		summarizeBy: none
+		sourceColumn: Max_BPM
+
+		annotation SummarizationSetBy = Automatic
+
+	column Avg_BPM
+		dataType: string
+		lineageTag: 4417ae6d-7e9c-4c20-849f-1857a5dc0a50
+		summarizeBy: none
+		sourceColumn: Avg_BPM
+
+		annotation SummarizationSetBy = Automatic
+
+	column Resting_BPM
+		dataType: string
+		lineageTag: 0f36263b-6585-43d5-aa31-f74ca9248a6a
+		summarizeBy: none
+		sourceColumn: Resting_BPM
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Session_Duration (hours)'
+		dataType: string
+		lineageTag: c30bfc45-5505-4d2b-9c56-d186d662db82
+		summarizeBy: none
+		sourceColumn: Session_Duration (hours)
+
+		annotation SummarizationSetBy = Automatic
+
+	column Calories_Burned
+		dataType: string
+		lineageTag: 0277bf9a-7099-4763-975c-dbe4271714e2
+		summarizeBy: none
+		sourceColumn: Calories_Burned
+
+		annotation SummarizationSetBy = Automatic
+
+	column Workout_Type
+		dataType: string
+		lineageTag: 86ea4fe0-b53c-44ef-be42-3ab0e576e6ff
+		summarizeBy: none
+		sourceColumn: Workout_Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fat_Percentage
+		dataType: int64
+		formatString: 0
+		lineageTag: b9bdf17f-e55d-4490-8eaf-9d819ade89c0
+		summarizeBy: sum
+		sourceColumn: Fat_Percentage
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Water_Intake (liters)'
+		dataType: int64
+		formatString: 0
+		lineageTag: 661a249b-06fb-45a5-9db7-8dfb7aeff527
+		summarizeBy: sum
+		sourceColumn: Water_Intake (liters)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Workout_Frequency (days/week)'
+		dataType: string
+		lineageTag: 6a2a4bf9-f5c1-436e-b0c1-290145938f07
+		summarizeBy: none
+		sourceColumn: Workout_Frequency (days/week)
+
+		annotation SummarizationSetBy = Automatic
+
+	column Experience_Level
+		dataType: string
+		lineageTag: c7b89e16-149f-401f-8969-1bbec6eb1074
+		summarizeBy: none
+		sourceColumn: Experience_Level
+
+		annotation SummarizationSetBy = Automatic
+
+	column BMI
+		dataType: double
+		lineageTag: e3f40e57-7c65-4c34-abc5-a27e66b305de
+		summarizeBy: sum
+		sourceColumn: BMI
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column WeightValor
+		dataType: double
+		lineageTag: 6cf584c0-8aea-4d66-9e5e-7aad250a9d72
+		summarizeBy: sum
+		sourceColumn: WeightValor
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column HeightValor
+		dataType: double
+		lineageTag: ee76fa42-4cbd-4d4d-9dc2-54102350b064
+		summarizeBy: sum
+		sourceColumn: HeightValor
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BMIValor
+		dataType: double
+		lineageTag: e496c726-955b-4b1a-9bc5-efaf532d2aa2
+		summarizeBy: sum
+		sourceColumn: BMIValor
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ValorConvertido = ```
+			
+			    IF('gym_members_exercise_tracking'[HeightValor] >= 100, 
+			       'gym_members_exercise_tracking'[HeightValor] / 100, 
+			       'gym_members_exercise_tracking'[HeightValor])
+			```
+		lineageTag: ddbae429-d18c-4f23-bb84-731bf09417f3
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Calories_Burned_Adjusted = DIVIDE([Calories_Burned], 10)
+		formatString: 0
+		lineageTag: 1198c5f5-9a25-41c4-9c65-8333bd925f77
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Corrected_Height = DIVIDE([Height_m], 100)
+		lineageTag: 5617be2e-00ad-4c3f-a499-b4549103d41e
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Corrected_Height2 = ```
+			
+			    IF([Corrected_Height] > 50, [Corrected_Height] / 100, [Corrected_Height])
+			```
+		lineageTag: 03abfd76-6889-4502-87d4-ad3b41e65f9e
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Corrected_Height3 = IF([Corrected_Height2] < 0.5, [Corrected_Height2] * 10, [Corrected_Height2])
+		lineageTag: de1e4dcc-674d-49d8-b609-fda3ef5667cf
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Age_Group
+		dataType: string
+		lineageTag: 309636ab-b79b-46fd-9bcc-969291d7cc17
+		summarizeBy: none
+		sourceColumn: Age_Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column Agua_ingerida
+		dataType: string
+		lineageTag: cf89376d-a3dc-4946-ad5e-b541d2e64f94
+		summarizeBy: count
+		sourceColumn: Agua_ingerida
+
+		annotation SummarizationSetBy = User
+
+	partition gym_members_exercise_tracking = m
+		mode: import
+		source =
+				let
+				    Fonte = Csv.Document(File.Contents("C:\Users\Raphael\Downloads\gym_members_exercise_tracking.csv"),[Delimiter=";", Columns=15, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"Weight (kg)", Int64.Type}}),
+				    #"Colunas Reordenadas" = Table.ReorderColumns(#"Tipo Alterado",{"Age", "Gender", "Weight (kg)", "Height (m)", "Max_BPM", "Avg_BPM", "Resting_BPM", "Session_Duration (hours)", "Calories_Burned", "Workout_Type", "Fat_Percentage", "Water_Intake (liters)", "Workout_Frequency (days/week)", "Experience_Level", "BMI"}),
+				    #"Tipo Alterado1" = Table.TransformColumnTypes(#"Colunas Reordenadas",{{"Weight (kg)", type number}, {"Height (m)", type number}, {"Age", Int64.Type}, {"BMI", Int64.Type}}),
+				    #"Personalização Adicionada" = Table.AddColumn(#"Tipo Alterado1", "Personalizar", each [#"Weight (kg)"] /10),
+				    #"Colunas Renomeadas" = Table.RenameColumns(#"Personalização Adicionada",{{"Personalizar", "WeightValor"}}),
+				    #"Tipo Alterado2" = Table.TransformColumnTypes(#"Colunas Renomeadas",{{"Weight (kg)", Int64.Type}, {"Height (m)", Int64.Type}, {"WeightValor", type number}}),
+				    #"Coluna Duplicada" = Table.DuplicateColumn(#"Tipo Alterado2", "Height (m)", "Height (m) - Copiar"),
+				    #"Colunas Renomeadas1" = Table.RenameColumns(#"Coluna Duplicada",{{"Height (m) - Copiar", "HeightValor"}}),
+				    #"Tipo Alterado3" = Table.TransformColumnTypes(#"Colunas Renomeadas1",{{"HeightValor", type number}}),
+				    #"Colunas Removidas" = Table.RemoveColumns(#"Tipo Alterado3",{"HeightValor"}),
+				    #"Coluna Duplicada1" = Table.DuplicateColumn(#"Colunas Removidas", "Height (m)", "Height (m) - Copiar"),
+				    #"Tipo Alterado4" = Table.TransformColumnTypes(#"Coluna Duplicada1",{{"Height (m) - Copiar", type number}}),
+				    #"Colunas Removidas1" = Table.RemoveColumns(#"Tipo Alterado4",{"Height (m) - Copiar"}),
+				    #"Tipo Alterado5" = Table.TransformColumnTypes(#"Colunas Removidas1",{{"Height (m)", Int64.Type}}),
+				    #"Coluna Duplicada2" = Table.DuplicateColumn(#"Tipo Alterado5", "Height (m)", "Height (m) - Copiar"),
+				    #"Tipo Alterado6" = Table.TransformColumnTypes(#"Coluna Duplicada2",{{"Height (m) - Copiar", type number}}),
+				    #"Colunas Renomeadas2" = Table.RenameColumns(#"Tipo Alterado6",{{"Height (m) - Copiar", "HeightValor"}}),
+				    #"Tipo Alterado7" = Table.TransformColumnTypes(#"Colunas Renomeadas2",{{"Height (m)", type text}}),
+				    #"Coluna Duplicada3" = Table.DuplicateColumn(#"Tipo Alterado7", "Height (m)", "Height (m) - Copiar"),
+				    #"Tipo Alterado8" = Table.TransformColumnTypes(#"Coluna Duplicada3",{{"Height (m) - Copiar", type number}}),
+				    #"Valor Substituído" = Table.ReplaceValue(#"Tipo Alterado8",171,1.71,Replacer.ReplaceValue,{"Height (m) - Copiar"}),
+				    #"Colunas Removidas2" = Table.RemoveColumns(#"Valor Substituído",{"Height (m) - Copiar", "HeightValor"}),
+				    #"Tipo Alterado9" = Table.TransformColumnTypes(#"Colunas Removidas2",{{"Height (m)", Int64.Type}}),
+				    #"Personalização Adicionada1" = Table.AddColumn(#"Tipo Alterado9", "Personalizar", each [#"Height (m)"] / 100),
+				    #"Colunas Renomeadas3" = Table.RenameColumns(#"Personalização Adicionada1",{{"Personalizar", "HeightValor"}}),
+				    #"Tipo Alterado10" = Table.TransformColumnTypes(#"Colunas Renomeadas3",{{"HeightValor", type number}}),
+				    #"Colunas Removidas3" = Table.RemoveColumns(#"Tipo Alterado10",{"HeightValor"}),
+				    #"Personalização Adicionada2" = Table.AddColumn(#"Colunas Removidas3", "Personalizar", each [#"Height (m)"] / 10),
+				    #"Colunas Renomeadas4" = Table.RenameColumns(#"Personalização Adicionada2",{{"Personalizar", "HeightValor"}}),
+				    #"Tipo Alterado11" = Table.TransformColumnTypes(#"Colunas Renomeadas4",{{"HeightValor", type number}}),
+				    #"Colunas Removidas4" = Table.RemoveColumns(#"Tipo Alterado11",{"HeightValor"}),
+				    #"Personalização Adicionada3" = Table.AddColumn(#"Colunas Removidas4", "Personalizar", each [#"Height (m)"] / 1),
+				    #"Colunas Renomeadas5" = Table.RenameColumns(#"Personalização Adicionada3",{{"Personalizar", "HeightValor"}}),
+				    #"Tipo Alterado12" = Table.TransformColumnTypes(#"Colunas Renomeadas5",{{"HeightValor", type number}}),
+				    #"Colunas Removidas5" = Table.RemoveColumns(#"Tipo Alterado12",{"HeightValor"}),
+				    #"Personalização Adicionada4" = Table.AddColumn(#"Colunas Removidas5", "Personalizar", each [#"Height (m)"] / 100),
+				    #"Colunas Removidas6" = Table.RemoveColumns(#"Personalização Adicionada4",{"Personalizar"}),
+				    #"Personalização Adicionada5" = Table.AddColumn(#"Colunas Removidas6", "Personalizar", each [#"Weight (kg)"] / 1000),
+				    #"Colunas Removidas7" = Table.RemoveColumns(#"Personalização Adicionada5",{"Personalizar"}),
+				    #"Personalização Adicionada6" = Table.AddColumn(#"Colunas Removidas7", "Personalizar", each [#"Height (m)"] / 100),
+				    #"Colunas Renomeadas6" = Table.RenameColumns(#"Personalização Adicionada6",{{"Personalizar", "HeightValor"}}),
+				    #"Tipo Alterado13" = Table.TransformColumnTypes(#"Colunas Renomeadas6",{{"HeightValor", type number}, {"Age", type number}, {"BMI", type number}}),
+				    #"Personalização Adicionada7" = Table.AddColumn(#"Tipo Alterado13", "Personalizar", each [BMI] / 100),
+				    #"Colunas Renomeadas7" = Table.RenameColumns(#"Personalização Adicionada7",{{"Personalizar", "BMIValor"}}),
+				    #"Tipo Alterado14" = Table.TransformColumnTypes(#"Colunas Renomeadas7",{{"BMIValor", type number}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Tipo Alterado14",{{"Height (m)", "Height_m"}}),
+				    #"Added Custom" = Table.AddColumn(#"Renamed Columns", "HeightCustom", each Text.Insert(Text.From([Height_m]), Text.Length(Text.From([Height_m])) - 2, ".")),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Added Custom",{{"HeightCustom", type number}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"HeightCustom"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Removed Columns",{{"Height_m", type number}}),
+				    #"Added Custom1" = Table.AddColumn(#"Changed Type1", "HeightCustom", each Text.Insert(Text.From([Height_m]), Text.Length(Text.From([Height_m])) - 2, ".")),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Added Custom1",{{"HeightCustom", Int64.Type}}),
+				    #"Colunas Removidas8" = Table.RemoveColumns(#"Changed Type2",{"HeightCustom"}),
+				    #"Personalização Adicionada8" = Table.AddColumn(#"Colunas Removidas8", "HeightPersonalizar", each if Text.StartsWith(Text.From([Height_m]), ".") then "0" & Text.From([Height_m]) else Text.From([Height_m])),
+				    #"Tipo Alterado15" = Table.TransformColumnTypes(#"Personalização Adicionada8",{{"HeightPersonalizar", type number}}),
+				    #"Personalização Adicionada9" = Table.AddColumn(#"Tipo Alterado15", "PersonalizarHeight", each if Text.Length(Text.From([HeightPersonalizar])) <= 2 then "0." & Text.PadStart(Text.From([HeightPersonalizar]), 2, "0") else Text.From([HeightPersonalizar])),
+				    #"Tipo Alterado16" = Table.TransformColumnTypes(#"Personalização Adicionada9",{{"PersonalizarHeight", type number}}),
+				    #"Personalização Adicionada10" = Table.AddColumn(#"Tipo Alterado16", "HeightVlr", each [HeightPersonalizar] / 100),
+				    #"Colunas Removidas9" = Table.RemoveColumns(#"Personalização Adicionada10",{"HeightVlr", "PersonalizarHeight", "HeightPersonalizar"}),
+				    #"Personalização Adicionada11" = Table.AddColumn(#"Colunas Removidas9", "Age_Group", each if [Age] >= 18 and [Age] <= 19 then "18-19" else if [Age] >= 20 and [Age] <= 29 then "20-29" else if [Age] >= 30 and [Age] <= 39 then "30-39" else if [Age] >= 40 and [Age] <= 59 then "40-59" else "Outros"),
+				    #"Tipo Alterado17" = Table.TransformColumnTypes(#"Personalização Adicionada11",{{"Water_Intake (liters)", type number}}),
+				    #"Personalização Adicionada12" = Table.AddColumn(#"Tipo Alterado17", "Agua_ingerida", each if [#"Water_Intake (liters)"] <= 10 then "0-10"
+				  else if [#"Water_Intake (liters)"] <= 20 then "11-20"
+				  else if [#"Water_Intake (liters)"] <= 30 then "21-30"
+				  else "31+"),
+				    #"Tipo Alterado18" = Table.TransformColumnTypes(#"Personalização Adicionada12",{{"Water_Intake (liters)", Int64.Type}})
+				in
+				    #"Tipo Alterado18"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegação
+

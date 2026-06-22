@@ -1,0 +1,37 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "9648b83f98e19440d306",
+  "position": {
+    "x": 1006.2439024390244,
+    "y": 0,
+    "z": 3000,
+    "height": 129.07317073170734,
+    "width": 273.95121951219511,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "A atividade mais praticada é o treino de força (Strengh). Percebemos isso, pois de acordo, com as pessoas na academia, os alunos de mais idade preferem o treino de força por trazer longevidade.",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "11pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

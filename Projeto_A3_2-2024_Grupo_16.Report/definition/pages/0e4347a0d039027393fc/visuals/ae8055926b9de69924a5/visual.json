@@ -1,0 +1,69 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "ae8055926b9de69924a5",
+  "position": {
+    "x": 0,
+    "y": 383.63892806770093,
+    "z": 0,
+    "height": 336.6995768688293,
+    "width": 265.38787023977432,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "gym_members_exercise_tracking"
+                    }
+                  },
+                  "Property": "Workout_Frequency (days/week)"
+                }
+              },
+              "queryRef": "gym_members_exercise_tracking.Workout_Frequency (days/week)",
+              "nativeQueryRef": "Workout_Frequency (days/week)"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "gym_members_exercise_tracking"
+                    }
+                  },
+                  "Property": "Age_Group"
+                }
+              },
+              "queryRef": "gym_members_exercise_tracking.Age_Group",
+              "nativeQueryRef": "Age_Group"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "gym_members_exercise_tracking"
+                  }
+                },
+                "Property": "Workout_Frequency (days/week)"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

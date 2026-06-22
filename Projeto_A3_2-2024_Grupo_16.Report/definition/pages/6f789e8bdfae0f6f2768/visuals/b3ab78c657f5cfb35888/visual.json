@@ -1,0 +1,106 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "b3ab78c657f5cfb35888",
+  "position": {
+    "x": 978.22638788752715,
+    "y": 19.379956741167991,
+    "z": 7000,
+    "height": 700.447007930786,
+    "width": 301.77361211247296,
+    "tabOrder": 7000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "gym_members_exercise_tracking"
+                    }
+                  },
+                  "Property": "Corrected_Height3"
+                }
+              },
+              "queryRef": "Sum(gym_members_exercise_tracking.Corrected_Height3)",
+              "nativeQueryRef": "Corrected_Height3"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "gym_members_exercise_tracking"
+                    }
+                  },
+                  "Property": "Total Alunos"
+                }
+              },
+              "queryRef": "gym_members_exercise_tracking.Total Alunos",
+              "nativeQueryRef": "Total Alunos"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "gym_members_exercise_tracking"
+                    }
+                  },
+                  "Property": "Ranking por Altura"
+                }
+              },
+              "queryRef": "gym_members_exercise_tracking.Ranking por Altura",
+              "nativeQueryRef": "Ranking por Altura"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "gym_members_exercise_tracking"
+                  }
+                },
+                "Property": "Ranking por Altura"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "73.01154462416196D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(gym_members_exercise_tracking.Corrected_Height3)"
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
